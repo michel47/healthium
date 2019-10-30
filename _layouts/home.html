@@ -1,0 +1,35 @@
+---
+jsversion: 1.4.4
+---
+<!DOCTYPE html><html><head>
+<link href="assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- vim: nospell
+<script src=js/showdown.min.js></script>
+<link href="https://cdn.statically.io/gh/iglake/cssjs/master/css/style.css" rel="stylesheet" type="text/css"/>
+!-->
+<meta charset="utf8">
+<link ref=preload href="https://cdn.jsdelivr.net/npm/showdown@latest/dist/showdown.min.js" as="script"/>
+<link href="https://cdn.jsdelivr.net/gh/iglake/cssjs@master/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+</head><body>
+
+<div id="hero" class="first content">
+<h1><img id=logo src="{{page.logo}}" alt="logo">%hero%</h1>
+</div>
+<br>
+<div class=content>
+{{ content }}
+</div><!-- end of page -->
+<br> This page is made for the humanity 4.0 with ♡, its source file is <a class=include href=web/domain/index.md>here</a>.
+
+{% if jekyll.environment == 'production' %}
+<!-- v{{ page.jsversion }} see [*](https://www.jsdelivr.com/package/gh/iglake/js) -->
+<script src="https://cdn.jsdelivr.net/gh/iglake/js@{{ page.jsversion }}/dist/config.js"></script>
+{% else %}
+<!-- JEKYLL_ENV != production -->
+<script src=http://127.0.0.1:8088/GITrepo/iglake/cssjs/js/src/config.js></script>
+{% endif %}
+<script>CFG.File('config.json',callback('body')) </script>
+
+<!--
+-->
