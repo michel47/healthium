@@ -1,6 +1,7 @@
 ---
 layout: home
 logo: assets/img/medbring.svg
+jsversion: 1.7
 ---
 # %title%
 
